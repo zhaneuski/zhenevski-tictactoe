@@ -26,10 +26,10 @@ session_start();
     $ai->loadMap();
 
 
-    switch ($_GET['action']) {
+    switch ($_GET['action'] ?? '') {
         case 'shot':
             if (!empty($ai->searchEmptyCells()) && $ai->checWin() === null) {
-                $ai->putCross($_GET['i'], $_GET['j']);
+                $ai->putCross((int)($_GET['i'] ?? 0), (int)($_GET['j'] ?? 0));
             }
 
             $ai->putRandNull();

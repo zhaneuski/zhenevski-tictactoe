@@ -3,6 +3,7 @@
 class Tictac
 {
     public $map = [];
+    public $n;
 
     public function __construct(int $n = 3)
     {
